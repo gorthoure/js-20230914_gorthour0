@@ -4,5 +4,12 @@
  * @returns {function} - function-getter which allow get value from object by set path
  */
 export function createGetter(path) {
-
+  const pathKeys = path.split('.')
+    let currObj=obj
+    pathKeys.forEach((pathKey)=>{
+      if (pathKey in obj) {
+      currObj = obj[pathKeys]
+    }
+    })
+    return currObj
 }
